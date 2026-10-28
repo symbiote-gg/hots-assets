@@ -1,4 +1,4 @@
-# hots-assets
+# HOTS assets
 
 Heroes of the Storm assets that [SymbioteGG](https://github.com/symbiote-gg/symbiote-app)
 downloads at build time and that
