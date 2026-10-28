@@ -1,0 +1,176 @@
+{
+    "alterac_pass": [
+        {
+            "file": "alterac_pass.webp",
+            "view": [
+                0.79,
+                193.02,
+                247.13,
+                21.51
+            ]
+        }
+    ],
+    "battlefield_of_eternity": [
+        {
+            "file": "battlefield_of_eternity.webp",
+            "view": [
+                6.9,
+                172,
+                241.13,
+                33.6
+            ]
+        }
+    ],
+    "blackhearts_bay": [
+        {
+            "file": "blackhearts_bay.webp",
+            "view": [
+                3.79,
+                202.2,
+                250.21,
+                35.38
+            ]
+        }
+    ],
+    "braxis_holdout": [
+        {
+            "file": "braxis_holdout.webp",
+            "view": [
+                0.9,
+                179.18,
+                247.16,
+                36
+            ]
+        }
+    ],
+    "cursed_hollow": [
+        {
+            "file": "cursed_hollow.webp",
+            "view": [
+                1.5,
+                192.73,
+                245.4,
+                23.21
+            ]
+        }
+    ],
+    "dragon_shire": [
+        {
+            "file": "dragon_shire.webp",
+            "view": [
+                3.76,
+                174.86,
+                244.03,
+                19.81
+            ]
+        }
+    ],
+    "garden_of_terror": [
+        {
+            "file": "garden_of_terror.webp",
+            "view": [
+                0.93,
+                181.86,
+                247.1,
+                34.11
+            ]
+        }
+    ],
+    "hanamura_temple": [
+        {
+            "file": "hanamura_temple.webp",
+            "view": [
+                3.79,
+                203.72,
+                252.2,
+                52.22
+            ]
+        }
+    ],
+    "haunted_mines": [
+        {
+            "file": "haunted_mines.webp",
+            "view": [
+                5.79,
+                241.59,
+                249.5,
+                125.88
+            ]
+        },
+        {
+            "file": "haunted_mines_bottom.webp",
+            "view": [
+                95.83,
+                113.08,
+                192.02,
+                12.79
+            ]
+        }
+    ],
+    "infernal_shrines": [
+        {
+            "file": "infernal_shrines.webp",
+            "view": [
+                -2.18,
+                184.35,
+                250.23,
+                18.9
+            ]
+        }
+    ],
+    "sky_temple": [
+        {
+            "file": "sky_temple.webp",
+            "view": [
+                3.6,
+                196.11,
+                244.4,
+                15.4
+            ]
+        }
+    ],
+    "tomb_of_the_spider_queen": [
+        {
+            "file": "tomb_of_the_spider_queen.webp",
+            "view": [
+                3.75,
+                170.29,
+                244.25,
+                24.63
+            ]
+        }
+    ],
+    "towers_of_doom": [
+        {
+            "file": "towers_of_doom.webp",
+            "view": [
+                4.97,
+                172.37,
+                243.1,
+                8.36
+            ]
+        }
+    ],
+    "volskaya_foundry": [
+        {
+            "file": "volskaya.webp",
+            "view": [
+                2.6,
+                176.8,
+                247.4,
+                10.35
+            ]
+        }
+    ],
+    "warhead_junction": [
+        {
+            "file": "warhead_junction.webp",
+            "view": [
+                0.86,
+                225.99,
+                247.11,
+                21.93
+            ]
+        }
+    ]
+}

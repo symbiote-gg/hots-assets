@@ -19,3 +19,10 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+This license covers only this repository's own work: the calibration data in
+minimaps.json files and the documentation. It does not cover the battleground
+renders (the .webp images), which are artwork belonging to Blizzard
+Entertainment, Inc. and are not licensed by this repository. See README.md.
