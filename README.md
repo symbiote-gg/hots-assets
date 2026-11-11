@@ -42,11 +42,10 @@ covers:
   it, and on the first layer if none does. Haunted Mines lists the surface first,
   then the mines underneath.
 
-A layer's file is an `.svg` traced with SymbioteGG's
-`scripts/assets/trace-minimap.mjs` from the map's own minimap image. It has a
+A layer's file is an `.svg` traced from the map's own minimap image. It has a
 `viewBox` starting at `0 0` and one path per flat colour of the minimap. The
-colours and the jungle's faded edge are in the file, so it looks right opened on
-its own; SymbioteGG reads only the paths and paints them itself:
+colours and the jungle's faded edge are in the file, and SymbioteGG shows it as
+it is:
 
 - `<path id="ground">`: the map's silhouette, always there
 - `<path id="jungle">`: the lighter ground off the lanes
@@ -60,7 +59,7 @@ SymbioteGG checks the index when it fetches it, and refuses it if:
 - a map has no layers
 - a `file` isn't a plain `.svg` name (no path separators, no leading
   dot)
-- an `.svg` has no `viewBox` or no `ground` path
+- an `.svg` has no `viewBox` starting at `0 0`
 - a `view` isn't four finite numbers with `left != right` and `top != bottom`
 
 ## Using it from SymbioteGG
