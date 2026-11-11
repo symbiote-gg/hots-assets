@@ -3,51 +3,64 @@
 Heroes of the Storm assets that [SymbioteGG](https://github.com/symbiote-gg/symbiote-app)
 downloads at build time and that
 [HeroesToolChest](https://github.com/HeroesToolChest) doesn't provide. For now
-that's the top-down battleground renders the replay death map draws on.
+that's the battleground minimaps the replay death map draws on.
 
 ## Layout
 
 ```
 battlegrounds/
-    minimaps.json        index: which render belongs to which map, and where
-    <map_id>.webp        one or more renders per map
+    minimaps.json        index: which minimap belongs to which map, and where
+    <map_id>.svg         one or more minimaps per map
 ```
 
 ## `minimaps.json`
 
-Each map id points to a list of layers. A layer is a render and the map area it
+Each map id points to a list of layers. A layer is a minimap and the map area it
 covers:
 
 ```json
 {
-    "haunted_mines": [
-        {
-            "file": "haunted_mines.webp",
-            "view": [5.79, 241.59, 249.5, 125.88]
-        },
-        {
-            "file": "haunted_mines_bottom.webp",
-            "view": [95.83, 113.08, 192.02, 12.79]
-        }
-    ]
+  "haunted_mines": [
+    {
+      "file": "haunted_mines.svg",
+      "view": [17.5, 237.5, 239.5, 130.5]
+    },
+    {
+      "file": "haunted_mines_bottom.svg",
+      "view": [99, 110, 188, 16.5]
+    }
+  ]
 }
 ```
 
 - The map id is the one SymbioteGG stores for the battleground, in lowercase
   snake case (`cursed_hollow`, `towers_of_doom`).
-- `view` is `[left, top, right, bottom]`: the map units at the render's left,
-  top, right and bottom edges. In game coordinates y grows upward, so `top` is
-  larger than `bottom`. The renders show scenery around the playable area, so
-  the edges can fall outside it, and they can be negative.
+- `view` is `[left, top, right, bottom]`: the map units at the left, top, right
+  and bottom edges of the SVG's `viewBox`. In game coordinates y grows upward,
+  so `top` is larger than `bottom`.
 - Layer order matters. A position goes on the first layer whose `view` contains
   it, and on the first layer if none does. Haunted Mines lists the surface first,
   then the mines underneath.
+
+A layer's file is an `.svg` traced with SymbioteGG's
+`scripts/assets/trace-minimap.mjs` from the map's own minimap image. It has a
+`viewBox` starting at `0 0` and one path per flat colour of the minimap. The
+colours and the jungle's faded edge are in the file, so it looks right opened on
+its own; SymbioteGG reads only the paths and paints them itself:
+
+- `<path id="ground">`: the map's silhouette, always there
+- `<path id="jungle">`: the lighter ground off the lanes
+- `<path id="walls">`: impassable terrain
+- `<path id="bright">`: what the minimap paints in its lighter tone, the ornaments
+  by the cores and on some maps the walls
 
 SymbioteGG checks the index when it fetches it, and refuses it if:
 
 - a map id doesn't match `^[a-z0-9_]+$`
 - a map has no layers
-- a `file` isn't a plain `.webp` name (no path separators, no leading dot)
+- a `file` isn't a plain `.svg` or `.webp` name (no path separators, no leading
+  dot)
+- an `.svg` has no `viewBox` or no `ground` path
 - a `view` isn't four finite numbers with `left != right` and `top != bottom`
 
 ## Using it from SymbioteGG
@@ -69,20 +82,10 @@ instead:
 MINIMAPS_DIR=../hots-assets/battlegrounds pnpm assets
 ```
 
-## Adding or recalibrating a map
-
-1. Add the render to `battlegrounds/` as WebP, and an entry to `minimaps.json`.
-2. Check the `view` against real positions: draw deaths from a few replays and
-   structure positions (cores, keeps, forts) from the tracker events on top of the
-   render. Move the edges until they line up.
-3. Fetch with `MINIMAPS_DIR` and check the death map in the app.
-4. Commit here, then pin the new commit in SymbioteGG.
-
 ## Credits
 
-The battleground renders come from the
-[Heroes of the Storm Wiki](https://heroesofthestorm.fandom.com) on Fandom,
-re-encoded to WebP. The `view` calibration was made for this repository.
+The minimaps are traced from the images Heroes of the Storm ships with each
+battleground. The tracing and the `view` placement were made for this repository.
 
 ## Blizzard content
 
@@ -99,5 +102,5 @@ Entertainment, Inc. in the U.S. and/or other countries. All rights reserved.
 
 ## License
 
-The calibration data and documentation are licensed under the [MIT License](LICENSE).
-It doesn't cover the battleground renders - see [Blizzard content](#blizzard-content).
+The placement data and documentation are licensed under the [MIT License](LICENSE).
+It doesn't cover the battleground minimaps - see [Blizzard content](#blizzard-content).
