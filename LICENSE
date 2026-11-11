@@ -24,5 +24,5 @@ SOFTWARE.
 
 This license covers only this repository's own work: the calibration data in
 minimaps.json files and the documentation. It does not cover the battleground
-renders (the .webp images), which are artwork belonging to Blizzard
+renders, which are artwork belonging to Blizzard
 Entertainment, Inc. and are not licensed by this repository. See README.md.

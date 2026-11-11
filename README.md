@@ -58,7 +58,7 @@ SymbioteGG checks the index when it fetches it, and refuses it if:
 
 - a map id doesn't match `^[a-z0-9_]+$`
 - a map has no layers
-- a `file` isn't a plain `.svg` or `.webp` name (no path separators, no leading
+- a `file` isn't a plain `.svg` name (no path separators, no leading
   dot)
 - an `.svg` has no `viewBox` or no `ground` path
 - a `view` isn't four finite numbers with `left != right` and `top != bottom`
